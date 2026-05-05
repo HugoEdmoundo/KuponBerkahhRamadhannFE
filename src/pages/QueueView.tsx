@@ -13,7 +13,7 @@ export default function QueueView() {
   const [entered, setEntered] = useState(false);
   const [enteredCode, setEnteredCode] = useState("");
   const { activePeriode } = usePeriodeData();
-  const { waiting, served, serving, registrations } = useQueueData(activePeriode?.id);
+  const { waiting, served, serving, registrations } = useQueueData();
 
   const myReg = registrations.find((r) => r.referral_code === enteredCode);
   const isExpired = myReg?.status === "served";

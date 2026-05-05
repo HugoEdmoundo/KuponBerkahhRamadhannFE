@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Register from "./pages/Register";
 import AdminDashboard from "./pages/AdminDashboard";
 import Display from "./pages/Display";
+import QueueView from "./pages/QueueView";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/queue" element={<QueueView />} />
             <Route path="/control" element={<AdminDashboard />} />
             <Route path="/display" element={<Display />} />
             <Route path="*" element={<NotFound />} />
