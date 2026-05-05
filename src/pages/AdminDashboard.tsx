@@ -27,7 +27,7 @@ type Mode = "control" | "periode";
 export default function AdminDashboard() {
   const [mode, setMode] = useState<Mode>("control");
   const { periodes, activePeriode, createPeriode, activatePeriode } = usePeriodeData();
-  const { waiting, served, serving, pending, settings, refetch } = useQueueData(activePeriode?.id);
+  const { waiting, served, serving, pending, refetch } = useQueueData();
   const [selectedReg, setSelectedReg] = useState<Registration | null>(null);
   const [showPending, setShowPending] = useState(false);
   const [search, setSearch] = useState("");
