@@ -38,7 +38,11 @@ export interface QueueSettings {
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
-    headers: { "Content-Type": "application/json", ...init?.headers },
+    headers: { 
+      "Content-Type": "application/json", 
+      "x-api-key": import.meta.env.VITE_API_KEY,
+      ...init?.headers 
+    },
     ...init,
   });
   if (!res.ok) {
